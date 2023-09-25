@@ -1,0 +1,67 @@
+::-webkit-scrollbar {
+  display: none;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Raleway", sans-serif;
+}
+h1 {
+  text-align: center;
+  font-size: 48px;
+}
+h2 {
+  margin-top: 20px;
+}
+main {
+  margin: 50px auto;
+  color: #fff;
+  text-align: center;
+}
+.bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  opacity: 1;
+  overflow: hidden;
+}
+.bg-video__content {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.circles {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 50px 0;
+}
+.circle {
+  width: 150px;
+  height: 150px;
+  margin: 20px;
+  cursor: grabbing;
+}
+.circle img {
+  height: 100%;
+  width: 100%;
+}
+.btn {
+  border: none;
+  border-radius: 40px;
+  padding: 15px 50px;
+  background-color: coral;
+  box-shadow: none;
+  margin: 0 20px;
+  cursor: pointer;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 700;
+}
