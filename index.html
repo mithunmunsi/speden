@@ -14,6 +14,15 @@
   </head>
   <body>
     <main>
+      <div class="overlay">
+        <div class="modal">
+          <h2>Hei! Well Played!</h2>
+          <h3>Your Score is: 0</h3>
+          <p style="padding: 10px">Next time focus on the game!</p>
+          <p></p>
+        </div>
+      </div>
+
       <section>
         <div class="bg-video">
           <video class="bg-video__content" autoplay muted loop>
@@ -26,23 +35,15 @@
           </video>
         </div>
         <h1>Speed Game! The Brown Fox!</h1>
-        <h2>Scoreboard: 10</h2>
+        <h2 id="score">Scoreboard: 0</h2>
         <div class="circles">
-          <div class="circle">
-            <img src="fox.png" alt="" />
-          </div>
-          <div class="circle">
-            <img src="fox.png" alt="" />
-          </div>
-          <div class="circle">
-            <img src="fox.png" alt="" />
-          </div>
-          <div class="circle">
-            <img src="fox.png" alt="" />
-          </div>
+          <div class="circle"></div>
+          <div class="circle"></div>
+          <div class="circle"></div>
+          <div class="circle"></div>
         </div>
-        <button class="btn">Start</button>
-        <button class="btn">End</button>
+        <button class="btn" id="start">Start</button>
+        <button class="btn" id="end">End</button>
       </section>
     </main>
 

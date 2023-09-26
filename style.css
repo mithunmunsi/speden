@@ -36,7 +36,9 @@ main {
   width: 100%;
   object-fit: cover;
 }
-
+#score {
+  background-color: black;
+}
 .circles {
   display: flex;
   justify-content: center;
@@ -47,12 +49,13 @@ main {
   width: 150px;
   height: 150px;
   margin: 20px;
-  cursor: grabbing;
+  background-image: url(fox.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  pointer-events: none;
 }
-.circle img {
-  height: 100%;
-  width: 100%;
-}
+
 .btn {
   border: none;
   border-radius: 40px;
@@ -64,4 +67,42 @@ main {
   color: #fff;
   font-size: 20px;
   font-weight: 700;
+}
+
+/* Highlight circire */
+.circle.active {
+  width: 150px;
+  height: 150px;
+  background-image: url(tiger.png);
+}
+
+/* Modal Window */
+.modal {
+  color: #333;
+  background-color: #fff;
+  max-width: 460px;
+  max-height: 560px;
+  margin: 0 auto;
+  padding: 50px;
+  border-radius: 10px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: justify;
+}
+.modal h2 {
+  margin: 30px 0;
+}
+.overlay {
+  background-image: linear-gradient(#63e21a65, #c6d70e7b);
+  backdrop-filter: blur(4px);
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
 }
