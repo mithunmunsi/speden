@@ -2,7 +2,7 @@ const startButton = document.querySelector('#start');
 const endButton = document.querySelector('#end');
 const scoreBoard = document.querySelector('#score');
 const overlay = document.querySelector('.overlay');
-const close = document.querySelector('.close');
+const closeX = document.querySelector('.close');
 // Global Variables
 let score = 0;
 let timer;
@@ -17,10 +17,11 @@ const getRandom = (min, max) =>
 
 // Step 1 Take the circe in
 const circles = document.querySelectorAll('.circle');
+
 // Step 2 Create the function
 const clickCircle = (i) => {
   if (i !== active) {
-    return endGame;
+    return endGame(); // Call endGame instead of returning the function
   }
   rounds--;
   score += 10;
@@ -33,9 +34,6 @@ const clickCircle = (i) => {
 circles.forEach((circle, i) => {
   circle.addEventListener('click', () => clickCircle(i));
 });
-/* for (const [i,item] of circles.entries()) {
-  item.addEventListener("click", () => clickCircle(i));
-} */
 
 const enableEvents = () => {
   circles.forEach((circle) => {
@@ -43,7 +41,8 @@ const enableEvents = () => {
   });
 };
 //   Game Controller Function
-startGame = () => {
+
+const startGame = () => {
   enableEvents();
   if (rounds >= 3) {
     return endGame;
@@ -68,8 +67,7 @@ startGame = () => {
     return pickNew(active);
   }
 };
-
-endGame = () => {
+const endGame = () => {
   clearTimeout(timer);
   modalShow();
 };
@@ -78,11 +76,11 @@ startButton.addEventListener('click', startGame);
 endButton.addEventListener('click', endGame);
 
 // Sounds Effect
-playStart = () => {
+const playStart = () => {
   playSound = new Audio('play.mp3');
   playSound.play();
 };
-playEnd = () => {
+const playEnd = () => {
   playSound = new Audio('play-end.mp3');
   playSound.play();
 };
@@ -98,5 +96,5 @@ const resetGame = () => {
   window.location.reload();
 };
 
-close.addEventListener('click', resetGame);
+closeX.addEventListener('click', resetGame);
 overlay.addEventListener('click', resetGame);
